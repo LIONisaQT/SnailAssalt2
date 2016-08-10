@@ -1,7 +1,6 @@
 package com.mygdx.game;
 
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -13,10 +12,13 @@ public class SnailAssalt2 extends ApplicationAdapter {
 	protected enum GameState {MAIN_MENU, LEVEL_SELECT, CHARACTER_SELECT, IN_GAME, GAME_OVER, STORE, SETTINGS}
 	protected static GameState state;
 
+	protected static Preferences preferences;
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
+        preferences = new Preferences("Preferences");
 		reset();
 	}
 
