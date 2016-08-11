@@ -1,29 +1,25 @@
-package com.mygdx.game;
+package com.mygdx.game.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
+import com.mygdx.game.SnailAssalt2;
 
 /**
- * Created by Ryan on 8/9/2016.
+ * Created by Ryan on 8/10/2016.
  */
-public class MainMenuScreen implements Screen {
+public class ShopScreen implements Screen {
     final SnailAssalt2 game;
 
-    Texture img;
-
-    public MainMenuScreen(final SnailAssalt2 gam) {
+    public ShopScreen(final SnailAssalt2 gam) {
         game = gam;
-        img = new Texture("badlogic.jpg");
     }
-
 
     @Override
     public void show() {
         game.batch.begin();
-        game.batch.draw(img, 0, 0);
         game.font.getData().setScale(3);
+        game.font.draw(game.batch, "SHOP", 10, Gdx.graphics.getHeight() - 10);
         game.batch.end();
     }
 
