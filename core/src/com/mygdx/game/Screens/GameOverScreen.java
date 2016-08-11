@@ -27,6 +27,10 @@ public class GameOverScreen implements Screen {
     public void render(float delta) {
         Gdx.gl.glClearColor(1, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        if (Gdx.input.justTouched()) {
+            game.setScreen(new MainMenuScreen(game));
+            dispose();
+        }
         show();
     }
 

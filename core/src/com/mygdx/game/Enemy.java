@@ -12,28 +12,28 @@ import com.badlogic.gdx.math.Rectangle;
  */
 public class Enemy {
     private static AssetManager manager;
+    private static String image = "badlogic.jpg"; //holds directory of image
     private Vector2 position, velocity;
     private Rectangle bounds;
     public Sprite sprite;
 
     static {
         //memory management -- loading image into manager
-        String image = "images/badlogic.jpg";
         manager = new AssetManager();
         manager.load(image, Texture.class);
         manager.finishLoading();
     }
 
     public Enemy(float x, float y) {
-        sprite = new Sprite(manager.get("images/badlogic.jpg", Texture.class));
+        sprite = new Sprite(manager.get(image, Texture.class));
         //sprite.setSize(YOUR WIDTH, YOUR HEIGHT);
         sprite.setScale(sprite.getWidth(), sprite.getHeight());
         position = new Vector2(x, y);
-        velocity = new Vector2(0, 50); //TODO: change this value
+        velocity = new Vector2(50, 0); //TODO: change this value
         bounds = new Rectangle(getPosition().x, getPosition().y, sprite.getWidth(), sprite.getHeight());
     }
 
-    public void move() {setPosition(getPosition().x, getPosition().y + getVelocity().y);}
+    public void move() {setPosition(getPosition().x + getVelocity().x, getPosition().y);}
     public void draw(SpriteBatch batch) {batch.draw(sprite, getPosition().x, getPosition().y, sprite.getWidth(), sprite.getHeight());}
     public void setPosition(float x, float y) {position.set(x, y);}
     public Vector2 getPosition() {return position;}
