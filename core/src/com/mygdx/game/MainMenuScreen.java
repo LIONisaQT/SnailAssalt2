@@ -16,7 +16,6 @@ public class MainMenuScreen implements Screen {
     public MainMenuScreen(final SnailAssalt2 gam) {
         game = gam;
         img = new Texture("badlogic.jpg");
-        game.state = SnailAssalt2.GameState.MAIN_MENU;
     }
 
 
@@ -25,7 +24,6 @@ public class MainMenuScreen implements Screen {
         game.batch.begin();
         game.batch.draw(img, 0, 0);
         game.font.getData().setScale(3);
-        game.font.draw(game.batch, "State: " + game.state, 10, Gdx.graphics.getHeight() - 10);
         game.batch.end();
     }
 
