@@ -9,6 +9,7 @@ public class SnailAssalt2 extends Game {
     BitmapFont font;
     enum GameState {START, MAIN_MENU, LEVEL_SELECT, CHARACTER_SELECT, IN_GAME, GAME_OVER, STORE, SETTINGS}
 	GameState state;
+	float deltaTime;
 
 	protected static Preferences preferences;
 
@@ -17,6 +18,7 @@ public class SnailAssalt2 extends Game {
 		batch = new SpriteBatch();
         font = new BitmapFont();
         preferences = new Preferences("Preferences");
+        deltaTime = Gdx.graphics.getDeltaTime();
         this.setScreen(new MainMenuScreen(this));
 	}
 
