@@ -33,7 +33,7 @@ public class Enemy {
         bounds = new Rectangle(getPosition().x, getPosition().y, sprite.getWidth(), sprite.getHeight());
     }
 
-    public void move() {setPosition(getPosition().x, getPosition().y - getVelocity().y);}
+    public void move() {setPosition(getPosition().x, getPosition().y + getVelocity().y);}
     public void draw(SpriteBatch batch) {batch.draw(sprite, getPosition().x, getPosition().y, sprite.getWidth(), sprite.getHeight());}
     public void setPosition(float x, float y) {position.set(x, y);}
     public Vector2 getPosition() {return position;}
