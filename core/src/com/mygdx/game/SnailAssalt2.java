@@ -10,9 +10,9 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 public class SnailAssalt2 extends Game {
 	SpriteBatch batch;
     BitmapFont font;
-	public static OrthographicCamera camera;
-	private static Vector3 tap;
-
+    float deltaTime;
+    public static OrthographicCamera camera;
+    private static Vector3 tap;
 
 	protected static Preferences preferences;
 
@@ -21,6 +21,7 @@ public class SnailAssalt2 extends Game {
 		batch = new SpriteBatch();
         font = new BitmapFont();
         preferences = new Preferences("Preferences");
+        deltaTime = Gdx.graphics.getDeltaTime();
 		camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		tap = new Vector3();
         this.setScreen(new MainMenuScreen(this));
