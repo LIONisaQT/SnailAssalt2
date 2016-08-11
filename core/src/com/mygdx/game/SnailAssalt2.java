@@ -5,13 +5,13 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.Screens.MainMenuScreen;
 
 public class SnailAssalt2 extends Game {
-	SpriteBatch batch;
-    BitmapFont font;
+	public SpriteBatch batch;
+    public BitmapFont font;
     float deltaTime;
     public static OrthographicCamera camera;
     private static Vector3 tap;
