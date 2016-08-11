@@ -10,8 +10,9 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 public class SnailAssalt2 extends Game {
 	SpriteBatch batch;
     BitmapFont font;
-    enum GameState {START, MAIN_MENU, LEVEL_SELECT, CHARACTER_SELECT, IN_GAME, GAME_OVER, STORE, SETTINGS}
-	GameState state;
+    float deltaTime;
+    public static OrthographicCamera camera;
+    private static Vector3 tap;
 
 	protected static Preferences preferences;
 
