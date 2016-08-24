@@ -9,7 +9,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Screens.MainMenuScreen;
 
-public class SnailAssalt2 extends Game {
+public class SnailAssalt2 extends Game { //lin is pretty cool
 	public SpriteBatch batch;
     public BitmapFont font;
     float deltaTime;
