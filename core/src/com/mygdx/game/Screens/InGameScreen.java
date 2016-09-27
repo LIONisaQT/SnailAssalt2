@@ -14,10 +14,12 @@ import java.util.ArrayList;
 public class InGameScreen implements Screen {
     final SnailAssalt2 game;
 
+    House house;
     ArrayList<Enemy> enemies;
 
     public InGameScreen(final SnailAssalt2 gam) {
         game = gam;
+        house = new House();
         enemies = new ArrayList<Enemy>();
         for (int i = 0; i < 5; i++) {
             enemies.add(new Enemy(0, (float)Math.random() * Gdx.graphics.getHeight()));
@@ -27,6 +29,7 @@ public class InGameScreen implements Screen {
     @Override
     public void show() {
         game.batch.begin();
+        house.draw(game.batch);
         for (Enemy e : enemies) {
             e.draw(game.batch);
         }

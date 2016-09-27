@@ -1,22 +1,23 @@
-package com.mygdx.game;
+package com.mygdx.game.Screens;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 
 /**
- * Created by Ryan on 8/9/2016.
+ * Created by ryan on 9/27/16.
  */
-public class Enemy {
+public class House {
     private static AssetManager manager;
     private static String image = "badlogic.jpg"; //holds directory of image
-    private Vector2 position, velocity;
+    private Vector2 position;
     private Rectangle bounds;
     public Sprite sprite;
-    private float damage;
+    private float hp;
 
     static { //this might need to me removed later
         //memory management -- loading image into manager
@@ -25,25 +26,21 @@ public class Enemy {
         manager.finishLoading();
     }
 
-    public Enemy(float x, float y) {
+    public House() {
         sprite = new Sprite(manager.get(image, Texture.class));
-        //sprite.setSize(YOUR WIDTH, YOUR HEIGHT);
+        sprite.setSize(Gdx.graphics.getWidth() / 5, Gdx.graphics.getHeight());
         sprite.setScale(sprite.getWidth(), sprite.getHeight());
-        position = new Vector2(x, y);
-        velocity = new Vector2(50, 0); //TODO: change this value
+        position = new Vector2(Gdx.graphics.getWidth() / 5, 0);
         bounds = new Rectangle(getPosition().x, getPosition().y, sprite.getWidth(), sprite.getHeight());
-        setDamage(1);
-        damage = getDamage();
+        setHp(1000);
+        hp = getHp();
     }
 
-    public void setDamage(float dmg) {damage = dmg;}
-    public float getDamage() {return damage;}
-    public void move() {setPosition(getPosition().x + getVelocity().x, getPosition().y);}
+    public void setHp(float hit) {hp = hit;}
+    public float getHp() {return hp;}
     public void draw(SpriteBatch batch) {batch.draw(sprite, getPosition().x, getPosition().y, sprite.getWidth(), sprite.getHeight());}
     public void setPosition(float x, float y) {position.set(x, y);}
     public Vector2 getPosition() {return position;}
-    public void setVelocity(float x, float y) {velocity.set(x, y);}
-    public Vector2 getVelocity() {return velocity;}
     public void setBounds() {bounds.set(getPosition().x, getPosition().y, sprite.getWidth(), sprite.getHeight());}
     public Rectangle getBounds() {return bounds;}
 }
