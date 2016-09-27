@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.mygdx.game.Enemy;
+import com.mygdx.game.House;
 import com.mygdx.game.SnailAssalt2;
 
 import java.util.ArrayList;
